@@ -1,5 +1,5 @@
 #MP3 Player App
-Play mp3 & m4a files within a nice, animated cover-art navigation.<br>
+Sorting and playing mp3 & m4a files within a nice, animated cover-art navigation.<br>
 A pure player. No backends or other overhead...
 
 ![](https://github.com/z000ao8q/screenshots/blob/master/mp3_player.png)
