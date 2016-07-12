@@ -413,8 +413,7 @@ class ScannerController extends Controller {
 		$pProgresskey = $this -> params('progresskey');
 		$pGetprogress = $this -> params('getprogress');
 		\OC::$server->getSession()->close();
-		
-		
+				
 		if (isset($pProgresskey) && isset($pGetprogress)) {
 				
 				
@@ -441,10 +440,8 @@ class ScannerController extends Controller {
 		if(!class_exists('getid3_exception')) {
 			require_once __DIR__ . '/../3rdparty/getid3/getid3.php';
 		}
-		
-		
-		
-        	$userView =  new View('/' . $this -> userId . '/files');
+				
+        $userView =  new View('/' . $this -> userId . '/files');
 		$audios_mp3 = $userView->searchByMime('audio/mpeg');
 		$audios_m4a = $userView->searchByMime('audio/mp4');
 		$audios_ogg = $userView->searchByMime('audio/ogg');
@@ -467,12 +464,22 @@ class ScannerController extends Controller {
 		\OC::$server->getCache()->set($this->progresskey, $currentIntArray, 100);
 		$counter = 0;
 		$counter_new = 0;
+		$debug_detail = \OC::$server->getConfig()->getSystemValue("mp3_player_debug");
+
 		foreach($audios as $audio) {
 		  	
-			//new Audio Found
-			if($this->checkIfTrackDbExists($audio['fileid']) === false){
-			   $TextEncoding = 'UTF-8';
+			if ($debug_detail == true AND $counter == 0) {
+				\OCP\Util::writeLog('mp3_player', 'mp3 detail - first file-id: '.$audio['fileid'], \OCP\Util::DEBUG);
+				\OCP\Util::writeLog('mp3_player', 'mp3 detail - track path: '.$audio['path'], \OCP\Util::DEBUG);
+			}
 			
+			if($this->checkIfTrackDbExists($audio['fileid']) === false){
+				
+				if ($debug_detail == true AND $counter == 0) {
+					\OCP\Util::writeLog('mp3_player', 'mp3 detail - track not in DB', \OCP\Util::DEBUG);
+				}
+
+				$TextEncoding = 'UTF-8';
 				$getID3 = new \getID3;
 				$ThisFileInfo = $getID3->analyze($userView->getLocalFile($audio['path']));
 				\getid3_lib::CopyTagsToComments($ThisFileInfo);
@@ -485,6 +492,14 @@ class ScannerController extends Controller {
 				if (!isset($ThisFileInfo['comments'])) {
 					\OCP\Util::writeLog('mp3_player', 'Error with getID3 of '.$audio['path'], \OCP\Util::DEBUG);
 				break;
+				}
+				
+				if ($debug_detail == true AND $counter == 0) {
+					\OCP\Util::writeLog('mp3_player', 'mp3 detail - track name: '.$audio['name'], \OCP\Util::DEBUG);
+					\OCP\Util::writeLog('mp3_player', 'mp3 detail - track year: '.$ThisFileInfo['comments']['year'][0], \OCP\Util::DEBUG);
+					\OCP\Util::writeLog('mp3_player', 'mp3 detail - track album: '.$ThisFileInfo['comments']['album'][0], \OCP\Util::DEBUG);
+					\OCP\Util::writeLog('mp3_player', 'mp3 detail - track genre: '.$ThisFileInfo['comments']['genre'][0], \OCP\Util::DEBUG);
+					\OCP\Util::writeLog('mp3_player', 'mp3 detail - track artist: '.$ThisFileInfo['comments']['artist'][0], \OCP\Util::DEBUG);
 				}
 					
 				$album = (string) $this->l10n->t('Various');
