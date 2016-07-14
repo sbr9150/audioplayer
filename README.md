@@ -26,12 +26,11 @@ Marcel Scherello<br>
 - fulscreen mode default (hide app-navigation)
 - playlist-section conditional display
 
-##Note
-This is the rework of the original "Audios"/"MP3 Player" app which is not maintained anymore. <br>
-Thank you Sebastian Döll for the first version
-
 ##Installation
 Download the zip file and rename folder to "mp3_player"<br>
 Upload the app to your apps directory and activate it on the apps settings page
-
 Availability in the app-store will come soon.
+
+##Note
+This is the rework of the original "Audios"/"MP3 Player" app which is not maintained anymore. <br>
+Thank you Sebastian Döll for the first version
