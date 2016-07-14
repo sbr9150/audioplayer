@@ -1,5 +1,5 @@
 #MP3 Player App
-Sorting and playing mp3 & m4a files within a nice, animated cover-art navigation.<br>
+Albums and Playlists for mp3 & m4a files within a nice, animated cover-art navigation.<br>
 A pure player. No backends or other overhead...
 
 ![](https://github.com/z000ao8q/screenshots/blob/master/mp3_player.png)
@@ -7,11 +7,10 @@ A pure player. No backends or other overhead...
 
 ##Features
 - Album view inspired by http://thomaspark.co/project/expandingalbums/ 
-- Creating Playlist
-- Scanning in UI
-- mobil view support
+- Scanning & Resetting Library in UI
 - Editing ID3 Tags (incl. picture)
-- Reset library in UI
+- Creating Playlist
+- mobil view support
 
 ##Maintainer
 Marcel Scherello<br>
@@ -19,11 +18,11 @@ Marcel Scherello<br>
 
 ##Version Info
 2.0.0
-- complete rebranding from "Audios" to "mp3_player"
+- rebranding from "Audios" to "mp3_player"
 - update of 3rd party libraries
-- scanner stabilization (continution after errors)
+- scanner stabilization (continuation after errors)
 - mobile usability (tooltip issue on touch)
-- fulscreen mode default (hide app-navigation)
+- fulscreen mode as default (hide app-navigation)
 - playlist-section conditional display
 
 ##Installation
