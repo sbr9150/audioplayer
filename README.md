@@ -14,7 +14,7 @@ A pure player. No backends or other overhead...
 - Reset library in UI
 
 ##Maintainer
-Marcel Scherello
+Marcel Scherello<br>
 (Initial Developer Sebastian Döll)
 
 ##Version Info
