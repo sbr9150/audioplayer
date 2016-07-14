@@ -22,7 +22,7 @@
 <iframe style="display:none;" name="file_upload_target" id='file_upload_target' src=""></iframe>
 <div id="searchresults" class="hidden" data-appfilter="mp3_player"></div>
 
-<div id="app-navigation">
+<div id="app-navigation" class="mp3_hide">
 <div class="innerNav">
 <!--my playlist clone -->	
 <li class="app-navigation-entry-edit plclone" id="pl-clone" data-pl="">
@@ -36,9 +36,13 @@
 </div>
 	<h3><?php p($l->t('Music'));?></h3>
 	<ul id="albenoverview">
-		<li><span id="alben"><span class="info-cover">A</span><?php p($l->t('Albums'));?></span>  <i class="ioc ioc-delete toolTip" title="<?php p($l->t('Reset music library'));?>" id="resetAudios"></i><i class="ioc ioc-refresh toolTip" title="<?php p($l->t('Scan for new audio files'));?>" id="scanAudios"></i></li>
+		<li><span id="alben"><span class="info-cover">A</span><?php p($l->t('Albums'));?></span>  
+		<i class="ioc ioc-delete toolTip" title="<?php p($l->t('Reset music library'));?>" id="resetAudios"></i>
+		<i class="ioc ioc-refresh toolTip" title="<?php p($l->t('Scan for new audio files'));?>" id="scanAudios"></i>
+		</li>
 	</ul>
-	<h3><?php p($l->t('Playlists'));?></h3>
+	<br><br>
+	<h3 class="mp3_hide" id="playlist_header"><?php p($l->t('Playlists'));?></h3>
 	<ul id="myPlayList"></ul>	
 	</div>
 </div>	
@@ -47,14 +51,14 @@
 	<i class="ioc-spinner ioc-spin"></i>
 </div>
 
-<div class="sm2-bar-ui full-width fixed">
+<div class="sm2-bar-ui full-width">
 
  <div class="bd sm2-main-controls">
 
   <div class="sm2-inline-texture"></div>
   <div class="sm2-inline-gradient"></div>
   
-<div class="sm2-inline-element sm2-button-element">
+  <div class="sm2-inline-element sm2-button-element">
    <div class="sm2-button-bd">
     <a href="#prev" class="sm2-inline-button previous"><?php p($l->t('previous song'));?></a>
    </div>
