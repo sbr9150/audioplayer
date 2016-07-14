@@ -21,7 +21,9 @@ Marcel Scherello
 - complete rebranding from "Audios" to "mp3_player"
 - update of 3rd party libraries
 - scanner stabilization (continution after errors)
-- mobile usability
+- mobile usability (tooltip issue on touch)
+- fulscreen mode default (hide app-navigation)
+- playlist-section conditional display
 
 (This is the rework of the old "Audios"/"MP3 Player" app which is not maintained anymore. <br>
 Thank you Sebastian Döll for the first version)
