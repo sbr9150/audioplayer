@@ -15,6 +15,7 @@ A pure player. No backends or other overhead...
 
 ##Maintainer
 Marcel Scherello
+(Initial Developer Sebastian Döll)
 
 ##Version Info
 2.0.0
@@ -25,8 +26,9 @@ Marcel Scherello
 - fulscreen mode default (hide app-navigation)
 - playlist-section conditional display
 
-(This is the rework of the old "Audios"/"MP3 Player" app which is not maintained anymore. <br>
-Thank you Sebastian Döll for the first version)
+##Note
+This is the rework of the original "Audios"/"MP3 Player" app which is not maintained anymore. <br>
+Thank you Sebastian Döll for the first version
 
 ##Installation
 Download the zip file and rename folder to "mp3_player"<br>
